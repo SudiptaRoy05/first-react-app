@@ -2,6 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import Todo from "./todo";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -9,22 +10,34 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1>
+      <Todo task="Learn React" isDone={false}></Todo>
+      <Todo task="Core Consept" isDone={false}></Todo>
+      <Todo task="Try JSX" isDone={true}></Todo>
+      
 
-      <Device name="Laptop" price="66"></Device>
+      {/* <Device name="Laptop" price="66"></Device>
       <Device name="Watch" price="6"></Device>
       <Device name="Phone" price="36"></Device>
 
       <Person></Person>
       <Person></Person>
       <Person></Person>
+
+      <Student grade="7" score="99"></Student>
+      <Student grade={12} score="88"></Student>
       <Student></Student>
-      <Developer></Developer>
+      <Student></Student>
+      
+      
+      <Developer></Developer> */}
+
+
     </>
   );
 }
 
 function Device(props){
-  console.log(props);
+  // console.log(props);
   return <h2>This device : {props.name} and its price: {props.price}k</h2>
 }
 
@@ -41,11 +54,11 @@ function Person() {
   );
 }
 
-function Student() {
+function Student({grade = 1, score = 0}) {
   return (
     <div className="student">
-      <h3>Name:</h3>
-      <p>AGE:</p>
+      <h3>Class: {grade}</h3>
+      <p>score: {score}</p>
     </div>
   );
 }
